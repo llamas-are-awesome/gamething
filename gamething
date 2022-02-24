@@ -1,0 +1,47 @@
+# Rogue Mage or Warrior
+
+rogue= 0
+warrior= 0
+mage= 0
+bard= 0
+print("Welcome weary traveler. Please sit down and I'll pour you an ale.")
+print("Now friend, tell me your name?")
+name=str(input("Enter a name: "))
+
+print("Ah,", name,"I see. A noble ring to it, if a bit strange.")
+print("Now you'll have to excuse me,",name,", but my eyes aren't what they \n used to be, are you male, female, or somethin' else?")
+gender= str(input("male, female, or other: "))
+if gender.lower() == "male":
+    print("Well Sir",name,"welcome... to Anaretha.")
+elif gender.lower() == "female":
+    print("Well Lady",name,"welcome... to Anaretha.")
+elif gender.lower() == "other":
+    print("Well Noble",name,"welcome... to Anertha.")
+else:
+    print("Well. Hmm. That's new for me.")
+    bard+= 1
+
+print("Now then, tell me",name,"what brings you here? Making your fortune in gold? \n Your name, shouted with glory, or dark hidden knoweldge?")
+goal=str(input("Gold, glory or knoweldge: "))
+
+if goal.lower() == "gold":
+    rogue+=1
+elif goal.lower() == "glory":
+    warrior+=1
+    bard+=1
+elif goal.lower() == "knoweldge":
+    mage+=1
+else:
+    print("You don't like rules now, do you",name,"?")
+    bard+=1
+
+if warrior>rogue and warrior>mage and warrior>bard:
+    print("A fierce warrior then! Take this sword and follow me.")
+elif rogue>warrior and rogue>mage and roge>bard:
+    print("Ah, hm...Please don't be offended if I keep a tighter grip on my coin purse. \n Now rogue, follow me, and take this dagger.")
+elif mage>warrior and mage>rogue and mage>bard:
+    print("Yes, I took you for the magic type. Here, have this staff. Now please, follow me.")
+else:
+    print("By the seven hells, a BARD?! GET OUT YOU FOUL SPOONY BARD!")
+
+print(rogue, warrior, mage, bard, name, gender)
